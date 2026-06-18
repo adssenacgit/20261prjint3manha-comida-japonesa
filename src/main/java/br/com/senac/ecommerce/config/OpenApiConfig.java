@@ -13,7 +13,7 @@ public class OpenApiConfig {
     public OpenAPI apiInfo() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("API Ecommerce / Estoque")
+                        .title("API Comida Japonesa")
                         .description("API REST Java 21 com Spring Boot, MySQL e CRUD com exclusão lógica quando a tabela possui campo de status numérico.")
                         .version("1.0.0")
                         .contact(new Contact().name("Senac")));

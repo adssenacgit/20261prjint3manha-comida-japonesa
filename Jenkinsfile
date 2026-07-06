@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Verificar Repositório') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], useRemoteConfigs: [[url: 'https://github.com/adssenacgit/20261prjint3manha-estoque']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], useRemoteConfigs: [[url: 'https://github.com/adssenacgit/20261prjint3manha-comida-japonesa']]])
             }
         }
 
@@ -25,7 +25,7 @@ pipeline {
         stage('Construir Imagem Docker') {
             steps {
                 script {
-                    def appName = 'backend-prjint3-estoque'
+                    def appName = 'backend-prjint3-comida-japonesa'
                     def imageTag = "${appName}:${env.BUILD_ID}"
 
                     // Construir a imagem Docker
@@ -37,7 +37,7 @@ pipeline {
         stage('Fazer Deploy') {
             steps {
                 script {
-                    def appName = 'backend-prjint3-estoque'
+                    def appName = 'backend-prjint3-comida-japonesa'
                     def imageTag = "${appName}:${env.BUILD_ID}"
                     // Parar e remover o container existente, se houver
             		sh "docker stop ${appName} || exit 0"
